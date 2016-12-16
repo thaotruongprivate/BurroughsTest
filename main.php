@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: thaotruong
- * Date: 16.12.16
- * Time: 15:00
- */
 
 require_once "autoload.php";
 

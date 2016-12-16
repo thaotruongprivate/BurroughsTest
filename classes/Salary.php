@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: thaotruong
- * Date: 16.12.16
- * Time: 14:57
- */
 class Salary {
 
 	const FORBIDDEN_DAYS = ['Saturday', 'Sunday'];

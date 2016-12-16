@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: thaotruong
- * Date: 16.12.16
- * Time: 14:58
- */
 class Bonus {
 
 	const BONUS_DAY = 15;

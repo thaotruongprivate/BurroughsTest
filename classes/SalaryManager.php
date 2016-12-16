@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: thaotruong
- * Date: 16.12.16
- * Time: 14:59
- */
 class SalaryManager {
 
 	const FIRST_DATE_FORMAT = 'Y-m-01';
