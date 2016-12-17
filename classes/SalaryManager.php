@@ -25,9 +25,9 @@ class SalaryManager {
 
 		fputcsv($handle, ['Month', 'Salary Date', 'Bonus Date']);
 
-		$count = 0;
+		$monthsProcessed = 0;
 
-		while ($count < $noOfMonths) {
+		while ($monthsProcessed < $noOfMonths) {
 
 			$salaryDate = Salary::getSalaryDate(
 				$calculationMonth->format('m'),
@@ -51,7 +51,7 @@ class SalaryManager {
 			);
 
 			$calculationMonth->modify('+1 month');
-			$count++;
+			$monthsProcessed++;
 		}
 
 		fclose($handle);
