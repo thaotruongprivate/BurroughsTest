@@ -5,16 +5,13 @@ class SalaryManager {
 	const FIRST_DATE_FORMAT = 'Y-m-01';
 	const DATE_FORMAT = 'Y-m-d';
 	const DEFAULT_OUTPUT_FILE_EXTENSION = 'csv';
-	/**
-	 * the default amount of months that salary dates should be calculated for
-	 */
-	const DEFAULT_CALCULATION_PERIOD = 12;
+	const DEFAULT_CALCULATION_PERIOD = 12; // the default amount of months that salary dates should be calculated for
 
 	/**
 	 * @param null|string $fileName
 	 * @param int $noOfMonths
 	 */
-	public function generateMonthlySalaryDates($noOfMonths = self::DEFAULT_CALCULATION_PERIOD, $fileName = null) {
+	public function generateNextMonthlySalaryDates($noOfMonths = self::DEFAULT_CALCULATION_PERIOD, $fileName = null) {
 
 		// the first month we calculate is the next month from now
 		$calculationMonth = new DateTime(date(self::FIRST_DATE_FORMAT, strtotime('+1 month')));
@@ -58,7 +55,6 @@ class SalaryManager {
 		}
 
 		fclose($handle);
-
 	}
 
 	/**
