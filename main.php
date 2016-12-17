@@ -4,8 +4,9 @@ require_once "autoload.php";
 
 $salaryManager = new SalaryManager();
 
-$salaryManager->generateNext12MonthSalaryDates(
-	(isset($argv[1]) ? $argv[1] : null)
+$salaryManager->generateMonthlySalaryDates(
+	(isset($argv[1]) ? (int)$argv[1] : SalaryManager::DEFAULT_CALCULATION_PERIOD),
+	(isset($argv[2]) ? $argv[2] : null)
 );
 
 echo "Done\n";
