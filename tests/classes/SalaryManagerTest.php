@@ -24,6 +24,9 @@ class SalaryManagerTest extends PHPUnit_Framework_TestCase {
 		$this->assertTrue(file_exists(SalaryManager::getOutputFolder() . $fileName));
 	}
 
+	/**
+	 * @depends testGenerateNextMonthlySalaryDatesCreateCsvFile
+	 */
 	public function testGenerateNextMonthlySalaryDatesCreateNonEmptyCsvFile() {
 
 		$calculationMonth = new DateTime(date(SalaryManager::FIRST_DATE_FORMAT, strtotime('+1 month')));
