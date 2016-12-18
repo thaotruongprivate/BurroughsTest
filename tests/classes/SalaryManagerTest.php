@@ -2,15 +2,6 @@
 
 class SalaryManagerTest extends PHPUnit_Framework_TestCase {
 
-	public function testGenerateNextMonthlySalaryDatesPrintsOutput() {
-
-		$this->expectOutputRegex('/Salary date is/');
-		$this->expectOutputRegex('/bonus date is/');
-
-		$salaryManager = new SalaryManager();
-		$salaryManager->generateNextMonthlySalaryDates();
-	}
-
 	public function testGenerateNextMonthlySalaryDatesCreateCsvFile() {
 
 		$salaryManager = new SalaryManager();
