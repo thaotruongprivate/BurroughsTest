@@ -18,8 +18,7 @@ class SalaryManager {
 		$calculationMonth = new DateTime(date(self::FIRST_DATE_FORMAT, strtotime('+1 month')));
 
 		if (!$fileName) {
-			$lastMonthToCalculate = date('m.Y', strtotime("+{$noOfMonths} month"));
-			$fileName = "{$calculationMonth->format('m.Y')}-{$lastMonthToCalculate}." . self::DEFAULT_OUTPUT_FILE_EXTENSION;
+			$fileName = self::getDefaultFileName($noOfMonths);
 		}
 
 		$handle = fopen(self::getOutputFolder() . $fileName, 'w+');
@@ -63,5 +62,15 @@ class SalaryManager {
 	 */
 	public static function getOutputFolder() {
 		return __DIR__ . '/../csv/';
+	}
+
+	/**
+	 * @param int $noOfMonths
+	 * @return string
+	 */
+	public static function getDefaultFileName($noOfMonths = self::DEFAULT_CALCULATION_PERIOD) {
+		$calculationMonth = new DateTime(date(self::FIRST_DATE_FORMAT, strtotime('+1 month')));
+		$lastMonthToCalculate = date('m.Y', strtotime("+{$noOfMonths} month"));
+		return "{$calculationMonth->format('m.Y')}-{$lastMonthToCalculate}." . self::DEFAULT_OUTPUT_FILE_EXTENSION;
 	}
 }
