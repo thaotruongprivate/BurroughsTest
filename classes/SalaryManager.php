@@ -6,6 +6,7 @@ class SalaryManager {
 	const DATE_FORMAT = 'Y-m-d';
 	const DEFAULT_OUTPUT_FILE_EXTENSION = 'csv';
 	const DEFAULT_CALCULATION_PERIOD = 12; // the default amount of months that salary dates should be calculated for
+	const HEADER_NAMES = ['Month', 'Salary Date', 'Bonus Date'];
 
 	/**
 	 * @param null|string $fileName
@@ -23,21 +24,21 @@ class SalaryManager {
 
 		$handle = fopen(self::getOutputFolder() . $fileName, 'w+');
 
-		fputcsv($handle, ['Month', 'Salary Date', 'Bonus Date']);
+		fputcsv($handle, self::HEADER_NAMES);
 
 		$monthsProcessed = 0;
 
 		while ($monthsProcessed < $noOfMonths) {
 
-			$salaryDate = Salary::getSalaryDate(
-				$calculationMonth->format('m'),
-				$calculationMonth->format('Y')
-			)->format(self::DATE_FORMAT);
+			$month = $calculationMonth->format('m');
+			$year = $calculationMonth->format('Y');
 
-			$bonusDate = Bonus::getBonusDate(
-				$calculationMonth->format('m'),
-				$calculationMonth->format('Y')
-			)->format(self::DATE_FORMAT);
+			$salary = new MonthlySalary($month, $year);
+			$bonus = new MonthlyBonus($month, $year);
+
+			$salaryDate = $salary->getSalaryDate()->format(self::DATE_FORMAT);
+
+			$bonusDate = $bonus->getBonusDate()->format(self::DATE_FORMAT);
 
 			echo "{$calculationMonth->format('m/Y')}: Salary date is {$salaryDate}, bonus date is {$bonusDate}\n";
 
