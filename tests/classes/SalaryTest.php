@@ -10,7 +10,7 @@ class SalaryTest extends PHPUnit_Framework_TestCase {
 
 		$salary = new MonthlySalary($month, $year);
 
-		$this->assertTrue(get_class($salary->getSalaryDate()) === DateTime::class);
+		$this->assertInstanceOf(DateTime::class, $salary->getSalaryDate());
 	}
 
 	public function testGetSalaryDateReturnsCorrectDate() {

@@ -10,7 +10,7 @@ class BonusTest extends PHPUnit_Framework_TestCase {
 
 		$bonus = new MonthlyBonus($month, $year);
 
-		$this->assertTrue(get_class($bonus->getBonusDate()) === DateTime::class);
+		$this->assertInstanceOf(DateTime::class, $bonus->getBonusDate());
 	}
 
 	public function testGetBonusDateReturnsCorrectDate() {
