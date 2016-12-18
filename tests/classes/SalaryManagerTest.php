@@ -21,7 +21,7 @@ class SalaryManagerTest extends PHPUnit_Framework_TestCase {
 		$salaryManager = new SalaryManager();
 		$salaryManager->generateNextMonthlySalaryDates();
 
-		$this->assertTrue(file_exists(SalaryManager::getOutputFolder() . $fileName));
+		$this->assertFileExists(SalaryManager::getOutputFolder() . $fileName);
 	}
 
 	/**
