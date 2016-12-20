@@ -1,6 +1,9 @@
 <?php
 
-
+/**
+ * Class BonusTest
+ * tests for methods in MonthlyBonus class
+ */
 class BonusTest extends PHPUnit_Framework_TestCase {
 
 	public function testGetBonusDateReturnsDateTimeObject() {

@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Class MonthlySalary
+ *
+ * This class describes a generic monthly salary payment, responsible for generic salary matters such as
+ * on which date of a given month salary should be paid
+ */
 class MonthlySalary {
 
 	private $month;

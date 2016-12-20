@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Class SalaryManagerTest
+ * tests for methods in SalaryManager class
+ */
 class SalaryManagerTest extends PHPUnit_Framework_TestCase {
 
 	public function testGenerateNextMonthlySalaryDatesCreateCsvFile() {

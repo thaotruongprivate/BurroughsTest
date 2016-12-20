@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Class SalaryManager
+ * this class is responsible for handling matters related to salary and bonus,
+ * such as generating a report on on which dates each month they should be paid
+ */
 class SalaryManager {
 
 	const FIRST_DATE_FORMAT = 'Y-m-01';

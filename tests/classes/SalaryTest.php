@@ -1,6 +1,9 @@
 <?php
 
-
+/**
+ * Class SalaryTest
+ * test for methods in MonthlySalary class
+ */
 class SalaryTest extends PHPUnit_Framework_TestCase {
 
 	public function testGetSalaryDateReturnsDateTimeObject() {

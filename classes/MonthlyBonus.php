@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Class MonthlyBonus
+ * This class describes a generic monthly bonus payment, responsible for generic bonus matters such as
+ * on which date of a given month bonus should be paid
+ */
 class MonthlyBonus {
 
 	private $month;
