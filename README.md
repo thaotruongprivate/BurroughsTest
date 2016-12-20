@@ -16,4 +16,4 @@ Example:
 - php main.php 3
 - php main.php
 
-no_of_months_ahead and name_of_output_file are both optional parameters. The default values for them are 12 and startmonth-endmonth.csv respectively. For example, if no parameters are provided, and the current month is Dec 2016, a .csv file will be created in folder csv, which will be named "01.2017-12.2017.csv" which contains the salary and bonus dates for each of the months between Jan 2017 and Dec 2017. 
+no_of_months_ahead and name_of_output_file are both optional parameters. The default values for them are 12 and startmonth-endmonth.csv respectively. For example, if no parameters are provided, and the current month is Dec 2016, a .csv file will be created in folder csv, which will be named "01.2017-12.2017.csv" which contains the salary and bonus dates for each of the months between Jan 2017 and Dec 2017. That file will look like this: https://github.com/thaotruongprivate/MonthlySalaryDateCalculation/blob/master/csv/01.2017-12.2017.csv
